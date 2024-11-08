@@ -14,23 +14,25 @@ pip install django-ip-restrictor
 
 ```python
 MIDDLEWARE = [
-    # ... other middleware ...
-    'ip_restrictor.middleware.IPRestrictMiddleware',
-    # ... other middleware ...
+    # ... other middlewares ...
+    'ip_restrictor.middleware.IPRestrictMiddleware'
 ]
 ```
 
 2. Configure allowed and blocked IP addresses in your `settings.py`:
 
 ```python
-WHITELIST_IPS = ["127.0.0.1", "192.168.1.0/24"]  # Allow localhost and the 192.168.1.0/24 subnet
-BLACKLIST_IPS = ["10.0.0.5", "10.0.0.6"]  # Block these specific IPs
+# Allow localhost and the 192.168.1.0/24 subnet
+WHITELIST_IPS = ["127.0.0.1", "192.168.1.0/24"]
+# Block specific IPs
+BLACKLIST_IPS = ["10.0.0.5", "10.0.0.6"]
 ```
 
 3.  Set the default restriction mode (optional):
 
 ```python
-DEFAULT_IP_RESTRICTION_MODE = "WHITELIST"  # or "BLACKLIST" or False (default)
+# "WHITELIST" or "BLACKLIST", default is False
+DEFAULT_IP_RESTRICTION_MODE = "WHITELIST"
 ```
 
 - `"WHITELIST"`: Only allows access from IPs in `WHITELIST_IPS`.
