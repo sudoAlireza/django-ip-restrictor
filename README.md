@@ -1,5 +1,7 @@
 # django-ip-restrictor
 
+[![PyPI Downloads](https://static.pepy.tech/badge/django-ip-restrictor)](https://pepy.tech/projects/django-ip-restrictor)
+
 A simple Django package to restrict access to views based on IP addresses.
 
 ## Installation
